@@ -5,162 +5,161 @@ import { IoSearchOutline } from 'react-icons/io5'
 import NavsLinksing from '../Element/NavsLinksing'
 // import NavDrop1Link from '../Element/NavDrop1Link.d'
 
+//         child: [
+//             {
+//                 main: "Medicine specialist",
+//                 child: [{ main: "hello" }]
+//             },
+//             {
+//                 main: "Cardiologist",
+//             },
+//             {
+//                 main: "Neurologist",
+//             },
+//             {
+//                 main: "Onchologist",
+//             },
+//             {
+//                 main: "Gestrology doctor",
+//             },
+//             {
+//                 main: "Ears, Nose, Throat (ENT) Specialist",
+//             },
+//             {
+//                 main: "Liver digestive system and medicine specialist",
+//             },
+//             {
+//                 main: "Dermitologist",
+//             },
+//             {
+//                 main: "Surgery Specialist",
+//             },
+//             {
+//                 main: "Rheumatology-Pain specialist",
+//             },
+//             {
+//                 main: "Pediatrician",
+//             },
+//             {
+//                 main: "Orthopedics Specialist and Sergeon",
+//             },
+//             {
+//                 main: "Psychiatrist brain and Neurologist",
+//             },
+//             {
+//                 main: "Chest Disease Asthma and TB specialist",
+//             },
+//             {
+//                 main: "Gynecologist",
+//             },
+//             {
+//                 main: "Opthalmologist",
+//             },
+//             {
+//                 main: "Hormone Specialist",
+//             },
+//             {
+//                 main: "Dentist"
+//             }
+//         ]
+//     },
+
 function Nav() {
     const [searchShow, setSearchShow] = useState(false)
 
     const [LinkData, setLinkData] = useState([
-
-        {
-            main: "Home"
-        },
         {
             main: "Services",
-            child: [
-                {
-                    main: "Bus schedule",
-                },
-                {
-                    main: "Train schedule"
-                },
-                {
-                    main: "Specialist doctor",
-                    child: [
-                        {
-                            main: "Medicine specialist"
-                        },
-                        {
-                            main: "Cardiologist",
-                        },
-                        {
-                            main: "Neurologist",
-                        },
-                        {
-                            main: "Onchologist",
-                        },
-                        {
-                            main: "Gestrology doctor",
-                        },
-                        {
-                            main: "Ears, Nose, Throat (ENT) Specialist",
-                        },
-                        {
-                            main: "Liver digestive system and medicine specialist",
-                        },
-                        {
-                            main: "Dermitologist",
-                        },
-                        {
-                            main: "Surgery Specialist",
-                        },
-                        {
-                            main: "Rheumatology-Pain specialist",
-                        },
-                        {
-                            main: "Pediatrician",
-                        },
-                        {
-                            main: "Orthopedics Specialist and Sergeon",
-                        },
-                        {
-                            main: "Psychiatrist brain and Neurologist",
-                        },
-                        {
-                            main: "Chest Disease Asthma and TB specialist",
-                        },
-                        {
-                            main: "Gynecologist",
-                        },
-                        {
-                            main: "Opthalmologist",
-                        },
-                        {
-                            main: "Hormone Specialist",
-                        },
-                        {
-                            main: "Dentist"
-                        }
-                    ]
-                },
-                {
-                    main: "Ambulance Service",
-                },
-                {
-                    main: "District Police Feni Phone Number",
-                },
-                {
-                    main: "Important phone number",
-                },
-                {
-                    main: "Fire Service and Civil Defense Feni",
-                },
-                {
-                    main: "Driving Training Center Information",
-                },
-                {
-                    main: "Oxygen Service",
-                },
-                {
-                    main: "Hospital",
-                },
-                {
-                    main: "Diagnostic Center",
-                },
-                {
-                    main: "Physiotherapy Center",
-                },
-                {
-                    main: "Hotel and Restaurant",
-                },
-                {
-                    main: "Nurseries",
-                },
-                {
-                    main: "All post codee of Feni district",
-                },
-                {
-                    main: "Courier Service in Feni",
-                },
-                {
-                    main: "List of propular foods in Feni",
-                },
-                {
-                    main: "Car Rental Service",
-                },
-                {
-                    main: "Municipal Services",
-                },
-                {
-                    main: "Job Circular in Feni",
-                },
-                {
-                    main: "Consumer Rights Feni",
-                }
+            // child: [
+            //     {
+            //         main: "Bus schedule",
+            //     },
+            //     {
+            //         main: "Train schedule"
+            //     },
+            //     {
+            //         main: "Specialist doctor",
 
-            ]
+            //     {
+            //         main: "Ambulance Service",
+            //     },
+            //     {
+            //         main: "District Police Feni Phone Number",
+            //     },
+            //     {
+            //         main: "Important phone number",
+            //     },
+            //     {
+            //         main: "Fire Service and Civil Defense Feni",
+            //     },
+            //     {
+            //         main: "Driving Training Center Information",
+            //     },
+            //     {
+            //         main: "Oxygen Service",
+            //     },
+            //     {
+            //         main: "Hospital",
+            //     },
+            //     {
+            //         main: "Diagnostic Center",
+            //     },
+            //     {
+            //         main: "Physiotherapy Center",
+            //     },
+            //     {
+            //         main: "Hotel and Restaurant",
+            //     },
+            //     {
+            //         main: "Nurseries",
+            //     },
+            //     {
+            //         main: "All post codee of Feni district",
+            //     },
+            //     {
+            //         main: "Courier Service in Feni",
+            //     },
+            //     {
+            //         main: "List of propular foods in Feni",
+            //     },
+            //     {
+            //         main: "Car Rental Service",
+            //     },
+            //     {
+            //         main: "Municipal Services",
+            //     },
+            //     {
+            //         main: "Job Circular in Feni",
+            //     },
+            //     {
+            //         main: "Consumer Rights Feni",
+            //     }
+
+            // ]
         },
         {
             main: "Tourism",
-            child: [
-                {
-                    main: "Travel guide feni"
-                },
-                {
-                    main: "Feni Sadar"
-                },
-                {
-                    main: "Rajajir Dhigi"
-                },
-                {
-                    main: "Bijoy Singh Dighi"
-                },
-            ]
+            // child: [
+            //     {
+            //         main: "Travel guide feni"
+            //     },
+            //     {
+            //         main: "Feni Sadar"
+            //     },
+            //     {
+            //         main: "Rajajir Dhigi"
+            //     },
+            //     {
+            //         main: "Bijoy Singh Dighi"
+            //     },
+            // ]
         }
 
     ])
 
 
     return (
-        <div className='flex w-full fixed top-0 items-center justify-between h-14 md:px-6 bg-white shadow-md shadow-slate-400'>
+        <div className='flex w-full sticky top-0 items-center justify-between h-14 md:px-6 bg-white shadow-md shadow-slate-400'>
             <NavLink to={"/"}>
                 <img src={logo} className='h-full' alt='logo' />
             </NavLink>
