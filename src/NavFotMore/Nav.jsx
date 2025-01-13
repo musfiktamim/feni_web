@@ -153,13 +153,16 @@ function Nav() {
             //         main: "Bijoy Singh Dighi"
             //     },
             // ]
+        },
+        {
+            main: "News"
         }
 
     ])
 
 
     return (
-        <div className='flex w-full sticky top-0 items-center justify-between h-14 md:px-6 bg-white shadow-md shadow-slate-400'>
+        <div className='flex w-full z-50 sticky top-0 items-center justify-between h-14 md:px-6 bg-white shadow-md shadow-slate-400'>
             <NavLink to={"/"}>
                 <img src={logo} className='h-full' alt='logo' />
             </NavLink>

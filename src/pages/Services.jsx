@@ -1,114 +1,61 @@
-import React, { useState } from 'react'
-import { BiSolidCylinder } from 'react-icons/bi'
-import { CiDeliveryTruck, CiHospital1, CiReceipt } from 'react-icons/ci'
-import { FaAmbulance } from 'react-icons/fa'
-import { FaBus, FaFireExtinguisher, FaHospitalUser, FaHotel, FaSignsPost, FaTrainSubway, FaUserDoctor } from 'react-icons/fa6'
-import { GiCottonFlower, GiPoliceCar, GiPoliceOfficerHead } from 'react-icons/gi'
-import { IoCar, IoFastFood } from 'react-icons/io5'
-import { MdBluetoothDrive, MdOutlineSpeakerPhone } from 'react-icons/md'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { mainContext } from '../Context/Maincontext'
+import TrainCart from '../components/TrainCart'
+import ServicesBoxes from '../Element/ServicesBoxes'
 
 function Services() {
-    const [services, setServices] = useState([
-        {
-            Icons: <FaBus size={"3rem"} className='group-hover:animate-pulse' color='white' />,
-            main: "Bus schedule",
-        },
-        {
-            Icons: <FaTrainSubway className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Train schedule"
-        },
-        {
-            Icons: <FaUserDoctor className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Specialist doctor",
-        },
-
-        {
-            Icons: <FaAmbulance className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Ambulance Service",
-        },
-        {
-            Icons: <GiPoliceCar className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "District Police Feni Phone Number",
-        },
-        {
-            Icons: <MdOutlineSpeakerPhone className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Important phone number",
-        },
-        {
-            Icons: <FaFireExtinguisher className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Fire Service and Civil Defense Feni",
-        },
-        {
-            Icons: <MdBluetoothDrive className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Driving Training Center Information",
-        },
-        {
-            Icons: <BiSolidCylinder className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Oxygen Service",
-        },
-        {
-            Icons: <CiHospital1 className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Hospital",
-        },
-        {
-            Icons: <FaHospitalUser className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Diagnostic Center",
-        },
-        {
-            main: "Physiotherapy Center",
-        },
-        {
-            Icons: <FaHotel className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Hotel and Restaurant",
-        },
-        {
-            Icons: <GiCottonFlower className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Nurseries",
-        },
-        {
-            Icons: <FaSignsPost className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "All post codee of Feni district",
-        },
-        {
-            Icons: <CiDeliveryTruck className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Courier Service in Feni",
-        },
-        {
-            Icons: <IoFastFood className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "List of propular foods in Feni",
-        },
-        {
-            Icons: <IoCar className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Car Rental Service",
-        },
-        {
-            Icons: <GiPoliceOfficerHead className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Municipal Services",
-        },
-        {
-            Icons: <CiReceipt className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Job Circular in Feni",
-        },
-        {
-            Icons: <CiReceipt className='group-hover:animate-pulse' size={"3rem"} color='white' />,
-            main: "Consumer Rights Feni",
+    const { services, train } = useContext(mainContext)
+    // console.log(Number(`${trai.departure}`.split(":")[0]) > 12 ? Number(`${trai.departure}`.split(":")[0]) - 12 : Number(`${trai.departure}`.split(":")[0]))
+    const [selectedValues, setSelectedVa] = useState("train")
+    const [seeMore, setSeeMore] = useState(false)
+    function timeSpliter(str) {
+        const strarr = str.split(":")
+        if (Number(strarr[0]) > 12) {
+            strarr[0] = Number(strarr[0]) - 12;
+        } else {
+            strarr[0] = Number(strarr[0]);
         }
-    ])
-
+    }
+    useEffect(() => {
+        // selectedValues
+    }, [selectedValues])
     return (
-        <div className='px-5 py-3 w-full'>
-            <div className='w-full flex flex-wrap gap-3'>
-                {
-                    services.map(({ main, Icons }, index) => <NavLink to={`${main.toLocaleLowerCase().replaceAll(" ", "")}`} key={index} className='md:w-[250px] md:px-1 px-2 w-[100px] h-[120px] flex-col group md:h-[150px] flex items-center justify-center rounded-md bg-gradient-to-bl from-green-400 to-green-600'>
-                        {Icons}
-                        <p className={`text-white overflow-clip text-center md:text-base text-xs relative overflow-x-hidden after:absolute after:contents-' ' after:-translate-x-full group-hover:after:translate-x-0 after:w-[100%] after:transition after:duration-500 after:h-[2px] after:bg-white after:bottom-0 after:left-0`}>
-                            {main}
-                        </p>
-                    </NavLink>)
-                }
+        <div className='md:px-5 py-3 w-full'>
+            <div className={`w-full h-auto border-b-2 ${seeMore ? "pb-5" : "pb-0"} flex relative flex-col justify-center items-center border-pink-600`}>
+                <div className={`w-full justify-center ${seeMore ? "h-auto" : "h-[350px]"} transition duration-1000 ease-in-out overflow-y-hidden flex flex-wrap gap-3`}>
+                    {
+                        services.map(({ main, Icons }, index) => <ServicesBoxes key={index} main={main} Icons={Icons} />)
+                    }
+                </div>
+                <button onClick={() => setSeeMore(!seeMore)} className='absolute px-2 py-1 -bottom-4 bg-pink-600 text-white rounded-lg'>See More</button>
             </div>
-        </div>
+            <div className='w-full gap-y-2'>
+                <div className='w-full flex justify-end'>
+                    <select value={selectedValues} onChange={(e) => setSelectedVa(e.target.value)}>
+                        {
+                            services.map((item) => <option value={item.main.split(" ")[0].toLocaleLowerCase()}>{item.main}</option>)
+                        }
+                    </select>
+                </div>
+                <div>
+                    <div className='w-full flex md:pr-2 justify-end items-center'>
+                        <NavLink state={`${'Train Schedule'}`} to={'/trainschedule'} className={`text-blue-500`}>
+                            See More
+                        </NavLink>
+                    </div>
+                    <div id='train' className='flex flex-wrap gap-2' >
+                        {
+                            train.slice(0, 10).map((trai, index) => <TrainCart key={index} trai={trai} />)
+                        }
+
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div >
     )
 }
 

@@ -6,6 +6,7 @@ import Foot from './NavFotMore/Foot'
 import TourismHomePage from './pages/TourismHomePage'
 import Services from './pages/Services'
 import ServicesCompo from './pages/ServicesCompo'
+import TrainSchedule from './pages/TrainSchedule'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/services/:servicesName' element={<ServicesCompo />} />
         <Route path='/tourism' element={<TourismHomePage />} />
+        <Route path='/trainschedule' element={<TrainSchedule />} />
         <Route path='/tourism:tourismId' element={<TourismHomePage />} />
       </Routes>
       <Foot />
